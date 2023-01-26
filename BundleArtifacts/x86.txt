@@ -1,0 +1,2 @@
+MainPackage=C:\Users\alkha\source\repos\nedaasqlite\Nedaasqlite\bin\x86\Release\Nedaasqlite_1.3.5.0_x86.msix
+SymbolPackage=C:\Users\alkha\source\repos\nedaasqlite\Nedaasqlite\obj\x86\Release\Symbols\Nedaasqlite_1.3.5.0_x86.appxsym
