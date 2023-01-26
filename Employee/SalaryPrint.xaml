@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="nedaasqlite.Employee.SalaryPrint"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:nedaasqlite" Loaded="Page_Loaded"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:Extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1224">
+
+
+
+    <Grid x:Name="print" Background="white" BorderBrush="White" FocusVisualPrimaryBrush="#FF989898" FocusVisualSecondaryBrush="#99808080" Margin="0,10,0,-473">
+
+        <StackPanel  Margin="28,87,10,-2" RenderTransformOrigin="0.5,0.5">
+            <Image Source="ms-appx:/Assets/logo.png" Height="200" Width="200" Margin="0 50 800 0"/>
+
+            <TextBlock Text="مركز نداء" FontSize="14" Foreground="Black" Width="374" Margin="0 -180 180 0" HorizontalAlignment="Right" Height="164"/>
+            <TextBlock Text="لذوي الإحتياجات الخاصة" FontSize="14" Foreground="Black" Width="460" Margin="0 -150 180 0" HorizontalAlignment="Right" Height="158"/>
+            <TextBlock Text="تلفون:        70260660" FontSize="14" Foreground="Black" Width="454" Margin="0 -160 180 0" HorizontalAlignment="Right" Height="118"/>
+            <TextBlock Text="جوال:          77266100" FontSize="14" Foreground="Black" Width="454" Margin="0 -180 180 0" HorizontalAlignment="Right" Height="54" />
+            <TextBlock Text="الواتساب:    66677836" FontSize="14" Foreground="Black" Width="454" Margin="0 -160 180 0" HorizontalAlignment="Right" Height="26"/>
+            <TextBlock Text="ص.ب:              15715" FontSize="14" Foreground="Black" Width="456" Margin="0 -120 180 0" HorizontalAlignment="Right" Height="30" />
+            <TextBlock Text="سند صرف مرتب " FontWeight="ExtraBlack" FontSize="18" Foreground="Black" Width="131" Margin="0 -60 700 0" HorizontalAlignment="Right" Height="30" />
+            <Border BorderBrush="blue" BorderThickness="2" CornerRadius="3.2" Margin="0 0 350 0" Width="524" Height="40" />
+            <TextBlock Text="رقم السند:" FontWeight="Bold"  FontSize="16" Foreground="Black" Width="484" Margin="0 -42 130 0" HorizontalAlignment="Right" Height="28" />
+            <TextBlock x:Name="bill" Text="29784" FontSize="20" Foreground="Black" Width="135" Margin="0 -35 560 0" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" >
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="0.298"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+
+            <TextBlock Text="التاريخ:"  FontSize="16" FontWeight="Bold" Foreground="Black" Width="65" Margin="0 -33 810 0" HorizontalAlignment="Right" Height="33" />
+            <TextBlock x:Name="date" Text="19/08/2021" FontSize="20" Foreground="Black" Width="129" Margin="0 -40 855 0" HorizontalAlignment="Right" Height="31" />
+            <TextBlock Text="إلى الموظف/ " FontSize="18" Foreground="Black" Width="456" Margin="0 20 220 0" HorizontalAlignment="Right" Height="30" />
+            <TextBlock x:Name="student"  Text="احمد علي خالد العلي"  FontWeight="ExtraBlack" FontSize="24" Foreground="Black" Width="427" Margin="0 -40 740 0" HorizontalAlignment="Right" Height="37" FlowDirection="RightToLeft"  />
+            <TextBlock Text="بطاقة شخصية رقم/ " FontSize="18" Foreground="Black" Width="456" Margin="0 0 220 0" HorizontalAlignment="Right" Height="30" />
+            <TextBlock x:Name="id"  Text="احمد علي خالد العلي"  FontWeight="ExtraBlack" FontSize="24" Foreground="Black" Width="427" Margin="0 -40 740 0" HorizontalAlignment="Right" Height="37" FlowDirection="RightToLeft"  />
+            
+
+            <Border BorderBrush="blue" BorderThickness="3" Margin="0 30 350 0" Width="514" Height="45" Opacity="0.995"/>
+            <Border BorderBrush="blue" BorderThickness="3" Margin="0 -45 700 0" Width="164" Height="90" Opacity="0.995"/>
+            <Border BorderBrush="blue" BorderThickness="3" Margin="0 -90 350 0" Width="190" Height="90" Opacity="0.995"/>
+            <Border BorderBrush="blue" BorderThickness="3" Margin="0 -90 0 0" Width="164" Height="90" Opacity="0.995"/>
+            <TextBlock Text="مرتب شهر" FontSize="18"  FontWeight="Bold" Foreground="Black" Width="114" Margin="0 -125 510 0" HorizontalAlignment="Right" Height="39" />
+            <TextBlock x:Name="dateS" Text="10/2022" FontSize="18"  Foreground="Black" Width="80" Margin="0 -40 550 0" HorizontalAlignment="Right" Height="39"  />
+            <TextBlock Text="المبلغ" FontSize="18" FontWeight="Bold" Foreground="Black" Width="143" Margin="0 -120 650 0" HorizontalAlignment="Right" Height="42" />
+            <TextBlock Text="الملاحظات" FontSize="18" FontWeight="Bold" TextAlignment="Center"  Foreground="Black" Width="132" Margin="0 -130 875 0" HorizontalAlignment="Right" Height="27" />
+            <TextBlock x:Name="sal" Text="5000" FontSize="18" Foreground="Black" Width="83" Margin="0 -40 710 0" HorizontalAlignment="Right" Height="39" />
+            <TextBlock x:Name="notes"  Text=" " FontSize="18" Foreground="Black" Width="168" Margin="0 -40 855 0" HorizontalAlignment="Right" TextAlignment="Center"  Height="36" />
+           
+
+
+            <TextBlock Text="اقر بأنني استلمت كافة حقوقي عن كامل فترة عملي لدى المركز وعليه  " FontSize="18" Foreground="Black" Width="533" Margin="0 20 485 0" HorizontalAlignment="Right" Height="35" FontWeight="Bold"  />
+            <TextBlock Text=" فأنني ابرء ذمة مركز نداء لذوي الاحتياجات الخاصة من اية مطالبة بحقوقي" FontSize="18" Foreground="Black" Width="555" Margin="0 -10 485 0" HorizontalAlignment="Right" Height="35" FontWeight="Bold"  />
+            <TextBlock Text=" العمالية او مطالبة مالية و/او حقوقية و/او جزائية حتى تاريخ توقيع هذا السند. " FontSize="18" Foreground="Black" Width="584" Margin="0 -10 485 0" HorizontalAlignment="Right" Height="35" FontWeight="Bold"  />
+           
+            <TextBlock Text="توقيع المحاسب" FontWeight="ExtraBlack" FontSize="18" Foreground="Black" Width="131" Margin="0 0 850 0" HorizontalAlignment="Right" Height="30" />
+            <TextBlock Text="توقيع الموظف" FontWeight="ExtraBlack" FontSize="18" Foreground="Black" Width="131" Margin="0 -30 520 0" HorizontalAlignment="Right" Height="30" />
+            <Border BorderBrush="blue" BorderThickness="3" Margin="0 0 670 0" Width="190" Height="90" Opacity="0.995"/>
+            <Border BorderBrush="blue" BorderThickness="3" Margin="0 -90 0 0" Width="190" Height="90" Opacity="0.995"/>
+            <Image Source="ms-appx:/Assets/barc.png" Height="57" Width="197" Margin="0 20 600 0"/>
+        </StackPanel>
+
+    </Grid>
+</Page>
