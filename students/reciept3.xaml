@@ -1,0 +1,72 @@
+﻿<Page
+    x:Class="nedaasqlite.students.reciept3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:nedaasqlite.students" Loaded="Page_Loaded"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:Extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1224">
+
+
+
+    <Grid x:Name="print" Background="white" BorderBrush="White" FocusVisualPrimaryBrush="#FF989898" FocusVisualSecondaryBrush="#99808080" Margin="0,10,0,-473">
+
+        <StackPanel  Margin="28,87,10,-2" RenderTransformOrigin="0.5,0.5">
+            <Image Source="ms-appx:/Assets/logo.png" Height="151" Width="175" Margin="0 50 800 0"/>
+
+            <TextBlock Text="مركز نداء" FontSize="18" FontWeight="ExtraBlack" Foreground="Black" Width="380" Margin="0 -180 180 0" HorizontalAlignment="Right" Height="147"/>
+            <TextBlock Text="لذوي الإحتياجات الخاصة" FontSize="18" FontWeight="ExtraBlack" Foreground="Black" Width="489" Margin="0 -150 180 0" HorizontalAlignment="Right" Height="129"/>
+            <TextBlock Text="تلفون:        70260660" FontSize="18"  Foreground="Black" Width="482" Margin="0 -120 180 0" HorizontalAlignment="Right" Height="118" FontWeight="Medium"/>
+            <TextBlock Text="جوال:          77266100" FontSize="18" FontWeight="Medium" Foreground="Black" Width="483" Margin="0 -140 180 0" HorizontalAlignment="Right" Height="54" />
+            <TextBlock Text="الواتساب:    66677836" FontSize="18" FontWeight="Medium" Foreground="Black" Width="487" Margin="0 -120 180 0" HorizontalAlignment="Right" Height="26"/>
+            <TextBlock Text="ص.ب:              15715" FontSize="18" FontWeight="Medium" Foreground="Black" Width="479" Margin="0 -80 180 0" HorizontalAlignment="Right" Height="29" />
+            
+            <TextBlock Text="سند قبض " FontWeight="ExtraBlack" FontSize="18" Foreground="Black" Width="125" Margin="0 -20 700 0" HorizontalAlignment="Right" Height="30" />
+            <Border BorderBrush="blue" BorderThickness="2" CornerRadius="3.2" Margin="0 30 350 0" Width="524" Height="40" />
+            <TextBlock Text="رقم سند القبض:" FontWeight="Bold"  FontSize="16" Foreground="Black" Width="500" Margin="0 -42 130 0" HorizontalAlignment="Right" Height="22" />
+            <TextBlock x:Name="bill" Text="29784" FontSize="20" Foreground="Black" Width="135" Margin="0 -35 560 0" HorizontalAlignment="Right" />
+
+            <TextBlock Text="التاريخ:"  FontSize="16" FontWeight="Bold" Foreground="Black" Width="65" Margin="0 -33 810 0" HorizontalAlignment="Right" Height="33" />
+            <TextBlock x:Name="date" Text="19/08/2021" FontSize="20" Foreground="Black" Width="129" Margin="0 -40 855 0" HorizontalAlignment="Right" Height="31" />
+            <TextBlock Text="إلى ولي أمر الطالب/ " FontSize="18" Foreground="Black" Width="456" Margin="0 20 220 0" HorizontalAlignment="Right" Height="30" />
+            <TextBlock x:Name="student"  Text="احمد علي خالد العلي"  FontWeight="ExtraBlack" FontSize="24" Foreground="Black" Width="427" Margin="0 -40 740 0" HorizontalAlignment="Right" Height="37" FlowDirection="RightToLeft"  />
+            <TextBlock Text="بطاقة الشخصية رقم/ " FontSize="18" Foreground="Black" Width="456" Margin="0 0 220 0" HorizontalAlignment="Right" Height="30" />
+            <TextBlock x:Name="IDD"  Text="احمد علي خالد العلي"   FontSize="24" Foreground="Black" Width="427" Margin="0 -40 740 0" HorizontalAlignment="Right" Height="37" FlowDirection="RightToLeft"  />
+            <Border BorderBrush="blue" BorderThickness="3" Margin="0 20 350 0" Width="514" Height="200" Opacity="0.995"/>
+
+            <Border BorderBrush="blue" BorderThickness="3" Margin="0 -280 350 0" Width="514" Height="45" Opacity="0.995"/>
+            <Border BorderBrush="blue" BorderThickness="3" Margin="0 -120 350 0" Width="514" Height="45" Opacity="0.995"/>
+            <Border BorderBrush="blue" BorderThickness="3" Margin="0 -200 700 0" Width="164" Height="242" Opacity="0.995"/>
+            <Border BorderBrush="blue" BorderThickness="3" Margin="0 -45 350 0" Width="514" Height="45" Opacity="0.995"/>
+
+            <TextBlock Text="البيان" FontSize="18"  FontWeight="Bold" Foreground="Black" Width="87" Margin="0 -430 620 0" HorizontalAlignment="Right" Height="39" />
+            <TextBlock Text="المبلغ" FontSize="18" FontWeight="Bold" Foreground="Black" Width="127" Margin="0 -430 830 0" HorizontalAlignment="Right" Height="39"  />
+            <TextBlock Text="رسوم التسجيل التقييم" FontSize="18" Foreground="Black" Width="184" Margin="0 -350 590 0" HorizontalAlignment="Right" Height="39" />
+            <TextBlock x:Name="reg" Text="1500" FontSize="18" TextAlignment="Center"  Foreground="Black" Width="132" Margin="0 -360 875 0" HorizontalAlignment="Right" Height="27" />
+            <TextBlock Text="رسوم تعليمية" FontSize="18" Foreground="Black" Width="159" Margin="0 -270 590 0" HorizontalAlignment="Right" Height="39" />
+            <TextBlock x:Name="Tuition"  Text="6000" FontSize="18" Foreground="Black" Width="91" Margin="0 -265 895 0" HorizontalAlignment="Right" TextAlignment="Center"  Height="39" />
+            <TextBlock Text="رسوم المواصلات" FontSize="18" Foreground="Black" Width="132" Margin="0 -190 620 0" HorizontalAlignment="Right" Height="39" />
+            <TextBlock x:Name="bus" Text="1500" FontSize="18" Foreground="Black" Width="114" Margin="0 -185 700 0" HorizontalAlignment="Center" Height="39" TextAlignment="Center" />
+            <TextBlock Text="رسوم كتب مدرسية وقرطاسية" FontSize="18" Foreground="Black" Width="236" Margin="0 -115 560 0" HorizontalAlignment="Right" Height="39" />
+            <TextBlock x:Name="book"  Text="500" FontSize="18" Foreground="Black" Width="146" Margin="0 -110 865 0" TextAlignment="Center"  HorizontalAlignment="Right" Height="39" />
+            <TextBlock Text="خصم خاص من مجلس الإدارة" FontSize="18" Foreground="Black" Width="236" Margin="0 -40 560 0" HorizontalAlignment="Right" Height="39" />
+            <TextBlock x:Name="disc"  Text="500" FontSize="18" Foreground="Black" Width="146" Margin="0 -35 865 0" TextAlignment="Center"  HorizontalAlignment="Right" Height="39" />
+           
+            <Border BorderBrush="blue" BorderThickness="3" Width="123" Height="40" Opacity="0.995" Margin="0 30 741 0"/>
+           
+
+
+            <TextBlock  Text="المجموع" FontSize="18" Foreground="Black" Width="65" Margin="0 -40 800 0" HorizontalAlignment="Right" Height="25" />
+            <TextBlock x:Name="total" Text="5000" FontSize="18" Foreground="Black" Width="101" TextAlignment="Center"  Margin="0 -35 915 0" HorizontalAlignment="Right" Height="35" />
+            <TextBlock x:Name="notesg" Text="الرسوم اعلاه تغطي من الفترة " FontSize="16" Foreground="Black" Width="472" Margin="0 30 470 0" HorizontalAlignment="Right" Height="35" FontWeight="Bold" />
+            <TextBlock x:Name="note" Text="المبلغ المدفوع كاش 5000 شيك رقم 22157 ورقم 52147 " FontSize="16" Foreground="Black" Width="517" Margin="0 0 550 0" HorizontalAlignment="Right" Height="67" FontWeight="Bold" FlowDirection="RightToLeft" />
+            <TextBlock Text="ملاحظة: الرسوم المذكورة اعلاه لا تسترج بعد التسليم" FontSize="18" Foreground="Black" Width="447" Margin="0 0 485 0" HorizontalAlignment="Right" Height="35" FontWeight="Bold" />
+            <Image Source="ms-appx:/Assets/barc.png" Height="57" Width="197" Margin="0 -20 600 0"/>
+            <TextBlock Text="تعتمد الفاتورة بدون ختم وتوقيع" FontSize="18" Foreground="Black" Width="300" Margin="0 -20 710 0" HorizontalAlignment="Right" Height="35" FontWeight="Bold" />
+        </StackPanel>
+
+    </Grid>
+</Page>

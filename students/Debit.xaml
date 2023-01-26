@@ -1,0 +1,134 @@
+﻿<Page
+    x:Class="nedaasqlite.Debit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:nedaasqlite.students"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:Extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="#FFD6D6D6" BorderBrush="Black" FocusVisualPrimaryBrush="#FF989898" FocusVisualSecondaryBrush="#99808080" Width="auto" Height="auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Image Source="/Assets/bk.png" Stretch="Fill" Grid.ColumnSpan="7" />
+
+        <Image x:Name="logo" Source="/Assets/logo.png" Canvas.ZIndex="100" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Stretch="None" />
+
+
+        <TextBlock FontSize="48" Foreground="Black"
+                           Text="دفع الرسوم"  FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Margin="0,200,0,0" HorizontalAlignment="Center" Grid.ColumnSpan="1"/>
+        <Grid x:Name="data" CornerRadius="20,20,20,20" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="WhiteSmoke" Grid.Column="1" Margin="0,300,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+
+            <ComboBox x:FieldModifier="public" x:Name="cred" Grid.Column="1" SelectionChanged="cred_SelectionChanged"   PlaceholderText="اختر الطالب" Width="495" Height="auto" FontSize="34" Background="#66000000" FocusVisualSecondaryBrush="#99FF0000" HorizontalContentAlignment="Center" RenderTransformOrigin="0.497,-0.33" HorizontalAlignment="Center" Grid.ColumnSpan="3" VerticalAlignment="Bottom" FlowDirection="RightToLeft" />
+
+            <TextBox x:FieldModifier="public" x:Name="ac" Grid.Column="3" Grid.Row="1"  Header="رسوم التعليم: " TextChanged="ac_TextChanged"  BeforeTextChanging = "ac_BeforeTextChanging" InputScope="Number"  TextAlignment="Center" Text="0" Background="#662E90DC"  AcceptsReturn="True" FontSize="24" Width="auto" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" ManipulationMode="None" UseLayoutRounding="True" FocusVisualPrimaryBrush="Black" Foreground="Black" SelectionHighlightColor="Black" VerticalAlignment="Center">
+                <TextBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="black" TextAlignment="center"/>
+                    </DataTemplate>
+                </TextBox.HeaderTemplate>
+            </TextBox>
+            <TextBlock  FontSize="36" Foreground="Black" Grid.Column="1" Grid.Row="2"
+                           Text="المجموع" FontWeight="Bold" TextAlignment="Center" Width="auto" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tots" FontSize="36" Foreground="Black" Grid.Column="1" Grid.Row="2"
+                           Text="0" FontWeight="Bold" TextAlignment="Center"  Width="auto"  VerticalAlignment="Bottom"/>
+            <TextBox x:FieldModifier="public" x:Name="assess" TextChanged="ac_TextChanged" Grid.Column="3" Grid.Row="2" Header="رسوم التقييم: " BeforeTextChanging = "ac_BeforeTextChanging" InputScope="Number"  TextAlignment="Center" Text="0" Background="#662E90DC"  AcceptsReturn="True" FontSize="24" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalContentAlignment="Center" SelectionHighlightColor="Black" Foreground="Black" FocusVisualPrimaryBrush="Black" VerticalAlignment="Center" Canvas.ZIndex="99">
+                <TextBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="black" TextAlignment="center"/>
+                    </DataTemplate>
+                </TextBox.HeaderTemplate>
+            </TextBox>
+            <CheckBox x:Name="regOnly" Width="0" 
+                  FontFamily="Arial"  
+                  Height="27"  Content="" FlowDirection="RightToLeft" FontSize="24" RequestedTheme="Default" Grid.Row="2" Grid.Column="4" Visibility="Visible" Background="#662E90DC" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" MinWidth="20" MinHeight="20" Margin="0,66,0,0">
+                <CheckBox.RenderTransform>
+                    <CompositeTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.RenderTransform>
+            </CheckBox>
+            <TextBox x:FieldModifier="public" x:Name="bb"  Header="رسوم الباص: " TextChanged="ac_TextChanged" Grid.Column="3" Grid.Row="3" InputScope="Number" BeforeTextChanging = "ac_BeforeTextChanging"  TextAlignment="Center" Text="0" Background="#662E90DC"  AcceptsReturn="True" FontSize="24" HorizontalContentAlignment="Right" FlowDirection="RightToLeft" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalContentAlignment="Center" SelectionHighlightColor="Black" Foreground="Black" FocusVisualPrimaryBrush="Black" Padding="0,3,6,6" VerticalAlignment="Center" Canvas.ZIndex="99">
+                <TextBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="black" TextAlignment="center"/>
+                    </DataTemplate>
+                </TextBox.HeaderTemplate>
+            </TextBox>
+            <CheckBox x:Name="busOnly" Width="20" 
+                  FontFamily="Arial"  
+                  Height="25"  Content="" FlowDirection="RightToLeft" FontSize="24" RequestedTheme="Default" Grid.Row="3" Grid.Column="4" Visibility="Visible" Background="#662E90DC" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" MinWidth="20" Margin="0,40,0,0">
+                <CheckBox.RenderTransform>
+                    <CompositeTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.RenderTransform>
+            </CheckBox>
+            <TextBox x:FieldModifier="public" x:Name="paid" Header="المدفوع: "  BeforeTextChanging = "ac_BeforeTextChanging" FontWeight="Normal" TextAlignment="Center" Text=" " Background="#662E90DC"  AcceptsReturn="True" FontSize="24"  HorizontalContentAlignment="Center" FlowDirection="RightToLeft" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                <TextBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="black" TextAlignment="center"/>
+                    </DataTemplate>
+                </TextBox.HeaderTemplate>
+            </TextBox>
+
+            <TextBox x:FieldModifier="public" x:Name="bo" Header="رسوم قرطاسية وكتب: " Grid.Column="3" Grid.Row="4" TextChanged="ac_TextChanged" InputScope="Number" BeforeTextChanging = "ac_BeforeTextChanging"  TextAlignment="Center" Text="0" Background="#662E90DC"  AcceptsReturn="True" FontSize="24"  HorizontalContentAlignment="Center" FlowDirection="RightToLeft" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalContentAlignment="Center" VerticalAlignment="Center">
+                <TextBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="black" TextAlignment="center"/>
+                    </DataTemplate>
+                </TextBox.HeaderTemplate>
+            </TextBox>
+            <TextBox x:FieldModifier="public" x:Name="notes" Header="الملاحظات: " Grid.Column="3" Grid.Row="5"  TextAlignment="Center" Text=" " Background="#662E90DC"  AcceptsReturn="True" FontSize="24"  HorizontalContentAlignment="Center" FlowDirection="RightToLeft" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalContentAlignment="Center" VerticalAlignment="Center">
+                <TextBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="black" TextAlignment="center"/>
+                    </DataTemplate>
+                </TextBox.HeaderTemplate>
+            </TextBox>
+            <Button x:Name="BtnS2" Content="اعتماد وطباعة" Grid.Column="1" Grid.Row="4"
+                        FontSize="21" Foreground="White" Background="Black"
+                        CornerRadius="5" Padding="15,5,15,15"
+                        Click="BtnS_Click"
+                        Extensions:Mouse.Cursor="Hand" BorderBrush="White" FocusVisualPrimaryBrush="Red" VerticalContentAlignment="Stretch" UseLayoutRounding="True" RequestedTheme="Dark" Height="52" Width="175" HorizontalAlignment="Center">
+                <Button.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.ThemeDictionaries>
+                            <ResourceDictionary x:Key="Dark">
+                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="Blue"/>
+                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="MediumPurple"/>
+                            </ResourceDictionary>
+
+                        </ResourceDictionary.ThemeDictionaries>
+                    </ResourceDictionary>
+                </Button.Resources>
+            </Button>
+
+
+
+
+
+        </Grid>
+
+    </Grid>
+</Page>
