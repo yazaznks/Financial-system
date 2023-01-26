@@ -1,0 +1,160 @@
+﻿<Page
+    x:Class="nedaasqlite.Accounting.EditCredit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:nedaasqlite"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:Extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="#FFD6D6D6" BorderBrush="Black" FocusVisualPrimaryBrush="#FF989898" FocusVisualSecondaryBrush="#99808080" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Image Source="/Assets/bk.png" Stretch="Fill" Grid.ColumnSpan="3" />
+
+
+        <Image Source="ms-appx:/Assets/logo.png" Grid.Column="1"
+                   MaxHeight="200" 
+                   RelativePanel.AlignHorizontalCenterWithPanel="True"
+                   RelativePanel.AlignVerticalCenterWithPanel="True" UseLayoutRounding="False" d:LayoutRounding="Auto" VerticalAlignment="Top">
+
+        </Image>
+        <TextBlock  FontSize="48" Foreground="Black" Grid.Column="1"
+                           Text="تعديل مصروف" FontWeight="Bold" TextAlignment="Center" Height="74" VerticalAlignment="Top" Margin="0,200,0,0"/>
+
+        <Grid CornerRadius="20,20,20,20" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="622"  Margin="0,300,0,0" Background="White" FlowDirection="RightToLeft" UseLayoutRounding="False" >
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <DatePicker  x:Name="DOB" Header="تاريخ الصرف:" Grid.Row="0" Grid.Column="2"  FlowDirection="RightToLeft"  HorizontalContentAlignment="Right" Width="336" Background="#662E90DC" Height="77" FontSize="24" FontWeight="Normal" RequestedTheme="Light" Foreground="#FFFF8C8C" FocusVisualPrimaryBrush="White" Visibility="Visible" TabIndex="2147483644" YearFormat="{}{year.full}" HorizontalAlignment="Right" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="cred" Grid.Row="0" Grid.Column="2" PlaceholderText="اختر المصروف" Width="auto" Height="auto" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#66000000" FocusVisualSecondaryBrush="#99FF0000" >
+                <x:String>بترول باص 293995</x:String>
+                <x:String>بترول باص ادريس 276148</x:String>
+                <x:String>صيانة باص 293995</x:String>
+                <x:String>صيانة باص ادريس 276148</x:String>
+                <x:String>مكتب وضيافة</x:String>
+                <x:String>لوازم المركز</x:String>
+                <x:String>قرطاسية</x:String>
+                <x:String>اتصالات</x:String>
+                <x:String>تخليص أوراق</x:String>
+                <x:String>معاملات بنكية</x:String>
+                <x:String>مرتبات</x:String>
+                <x:String>سكن موظفين</x:String>
+                <x:String>عمولة تسجيل</x:String>
+                <x:String>كاميرات مراقبة وانتركم</x:String>
+                <x:String>تأمين وعقود صيانة</x:String>
+                <x:String>ايجار الفيلا</x:String>
+                <x:String>كهرماء</x:String>
+                <x:String>انترنت</x:String>
+                <x:String>اثاث</x:String>
+                <x:String>اعلانات ودعاية</x:String>
+            </ComboBox>
+
+            <TextBox x:Name="amount" Header="المبلغ: " Grid.Column="2"  VerticalAlignment="Center" Grid.Row="1" InputScope="Number"  TextAlignment="Right" Text="" Background="#662E90DC"  AcceptsReturn="True" FontSize="24" Width="483"  HorizontalContentAlignment="Center" FlowDirection="RightToLeft" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalContentAlignment="Center">
+                <TextBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="black"/>
+                    </DataTemplate>
+                </TextBox.HeaderTemplate>
+            </TextBox>
+
+            <TextBox x:Name="recipient" Header="اسم المستلم: " Grid.Column="2"  VerticalAlignment="Center" Grid.Row="2" InputScope="Number"  TextAlignment="Right" Text="" Background="#662E90DC"  AcceptsReturn="True" FontSize="24" Width="483"  HorizontalContentAlignment="Center" FlowDirection="RightToLeft" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalContentAlignment="Center">
+                <TextBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="black"/>
+                    </DataTemplate>
+                </TextBox.HeaderTemplate>
+            </TextBox>
+
+            <TextBox x:Name="notes" Header="ملاحظات: " Grid.Column="2"  Grid.Row="3" VerticalAlignment="Center" TextAlignment="Right" Text=" " Background="#662E90DC"  AcceptsReturn="True" FontSize="24" Width="483"  HorizontalContentAlignment="Right" FlowDirection="RightToLeft">
+                <TextBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="black"/>
+                    </DataTemplate>
+                </TextBox.HeaderTemplate>
+            </TextBox>
+            <CheckBox x:Name="check" Width="55" 
+                  FontFamily="Arial"  
+                  Height="6"  Content="نثرية؟" Grid.Column="2"  FlowDirection="LeftToRight" FontSize="24" RequestedTheme="Default" Grid.Row="1" HorizontalAlignment="left" Visibility="Visible" Background="#662E90DC" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+                <CheckBox.RenderTransform>
+                    <CompositeTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.RenderTransform>
+
+            </CheckBox>
+
+            <Button x:Name="BtnS" Content="اعتماد" Grid.Column="2"  Grid.Row="4"
+                        FontSize="36" Foreground="White" Background="Black"
+                        CornerRadius="5" 
+                        Click="BtnS_Click"
+                        Extensions:Mouse.Cursor="Hand" BorderBrush="White" FocusVisualPrimaryBrush="Red" VerticalAlignment="Stretch"  VerticalContentAlignment="Stretch" UseLayoutRounding="True" RequestedTheme="Dark" FontWeight="Bold" Margin="400,0,0,0">
+                <Button.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.ThemeDictionaries>
+                            <ResourceDictionary x:Key="Dark">
+                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="Blue"/>
+                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="MediumPurple"/>
+                            </ResourceDictionary>
+
+                        </ResourceDictionary.ThemeDictionaries>
+                    </ResourceDictionary>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="print" Content="اعتماد وطباعة" Grid.Column="2"  Grid.Row="4"
+                        FontSize="36" Foreground="White" Background="Black"
+                        CornerRadius="5"
+                        Click="print_Click"
+                        Extensions:Mouse.Cursor="Hand" BorderBrush="White" FocusVisualPrimaryBrush="Red" VerticalAlignment="Stretch"  VerticalContentAlignment="Stretch" UseLayoutRounding="True" RequestedTheme="Dark" FontWeight="Bold" Margin="200,0,0,0" HorizontalAlignment="Center">
+                <Button.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.ThemeDictionaries>
+                            <ResourceDictionary x:Key="Dark">
+                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="Blue"/>
+                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="MediumPurple"/>
+                            </ResourceDictionary>
+
+                        </ResourceDictionary.ThemeDictionaries>
+                    </ResourceDictionary>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="delete" Content="مسح مصروف" Grid.Column="2" Grid.Row="4"
+                        FontSize="21" Foreground="White" Background="#FFFF0A0A"
+                        CornerRadius="5" 
+                        Click="delete_Click"
+                        Extensions:Mouse.Cursor="Hand" VerticalAlignment="Center" BorderBrush="White" FocusVisualPrimaryBrush="Red" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalContentAlignment="Center" Height="55" Width="189" >
+                <Button.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.ThemeDictionaries>
+                            <ResourceDictionary x:Key="Dark">
+                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="red"/>
+                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="red"/>
+                            </ResourceDictionary>
+
+                        </ResourceDictionary.ThemeDictionaries>
+                    </ResourceDictionary>
+                </Button.Resources>
+            </Button>
+        </Grid>
+
+
+    </Grid>
+</Page>
